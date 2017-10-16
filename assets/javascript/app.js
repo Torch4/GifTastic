@@ -2,11 +2,13 @@ $(document).ready(function(){
     function who(){
         $('button').on('click', function() { 
             var doctor = $(this).data('name');
+           //connects to giphy to retreive images
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + doctor + "&api_key=706366aca6d647718a5c439725cd93a8&limit=10";
             $.ajax({
                 url: queryURL,
                 method: 'GET'
             })
+            //animates giphys and freezes them
             .done(function(response) {
                 console.log(response)
                 var results = response.data;
@@ -46,7 +48,7 @@ $(document).ready(function(){
     
 
     var doctor = [''];
-    
+    // Adds GIF Search buttons
     $('#theButton').on('click', function(){
         event.preventDefault();        
         console.log("adding a button")
