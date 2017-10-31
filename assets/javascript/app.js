@@ -1,3 +1,4 @@
+//sets up function to connect info to button
 $(document).ready(function(){
     function who(){
         $('button').on('click', function() { 
@@ -26,7 +27,7 @@ $(document).ready(function(){
                     doctorDiv.append(doctorImage);
                     doctorDiv.prependTo($('#gifs'));
                 }
-
+//Freezes and unfreezes giphys
                 $('.anImg').on('click', function() {
                     var state = $(this).attr('data-state'); 
                     console.log(this);
